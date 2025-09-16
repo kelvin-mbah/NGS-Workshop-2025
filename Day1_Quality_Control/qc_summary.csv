@@ -1,0 +1,45 @@
+"sample","module","status","tot.seq","seq.length","pct.gc","pct.dup"
+"ERR12268341_1","Basic Statistics","PASS","1487107","140",62,23.76
+"ERR12268341_1","Per base sequence quality","WARN","1487107","140",62,23.76
+"ERR12268341_1","Per tile sequence quality","PASS","1487107","140",62,23.76
+"ERR12268341_1","Per sequence quality scores","PASS","1487107","140",62,23.76
+"ERR12268341_1","Per base sequence content","FAIL","1487107","140",62,23.76
+"ERR12268341_1","Per sequence GC content","PASS","1487107","140",62,23.76
+"ERR12268341_1","Per base N content","PASS","1487107","140",62,23.76
+"ERR12268341_1","Sequence Length Distribution","PASS","1487107","140",62,23.76
+"ERR12268341_1","Sequence Duplication Levels","PASS","1487107","140",62,23.76
+"ERR12268341_1","Overrepresented sequences","WARN","1487107","140",62,23.76
+"ERR12268341_1","Adapter Content","FAIL","1487107","140",62,23.76
+"ERR12268341_2","Basic Statistics","PASS","1487107","140",62,24.89
+"ERR12268341_2","Per base sequence quality","PASS","1487107","140",62,24.89
+"ERR12268341_2","Per tile sequence quality","PASS","1487107","140",62,24.89
+"ERR12268341_2","Per sequence quality scores","PASS","1487107","140",62,24.89
+"ERR12268341_2","Per base sequence content","FAIL","1487107","140",62,24.89
+"ERR12268341_2","Per sequence GC content","PASS","1487107","140",62,24.89
+"ERR12268341_2","Per base N content","PASS","1487107","140",62,24.89
+"ERR12268341_2","Sequence Length Distribution","PASS","1487107","140",62,24.89
+"ERR12268341_2","Sequence Duplication Levels","PASS","1487107","140",62,24.89
+"ERR12268341_2","Overrepresented sequences","WARN","1487107","140",62,24.89
+"ERR12268341_2","Adapter Content","FAIL","1487107","140",62,24.89
+"ERR12268342_1","Basic Statistics","PASS","1440864","151",64,28.97
+"ERR12268342_1","Per base sequence quality","PASS","1440864","151",64,28.97
+"ERR12268342_1","Per tile sequence quality","PASS","1440864","151",64,28.97
+"ERR12268342_1","Per sequence quality scores","PASS","1440864","151",64,28.97
+"ERR12268342_1","Per base sequence content","FAIL","1440864","151",64,28.97
+"ERR12268342_1","Per sequence GC content","PASS","1440864","151",64,28.97
+"ERR12268342_1","Per base N content","PASS","1440864","151",64,28.97
+"ERR12268342_1","Sequence Length Distribution","PASS","1440864","151",64,28.97
+"ERR12268342_1","Sequence Duplication Levels","PASS","1440864","151",64,28.97
+"ERR12268342_1","Overrepresented sequences","PASS","1440864","151",64,28.97
+"ERR12268342_1","Adapter Content","WARN","1440864","151",64,28.97
+"ERR12268342_2","Basic Statistics","PASS","1440864","151",64,28.63
+"ERR12268342_2","Per base sequence quality","PASS","1440864","151",64,28.63
+"ERR12268342_2","Per tile sequence quality","PASS","1440864","151",64,28.63
+"ERR12268342_2","Per sequence quality scores","PASS","1440864","151",64,28.63
+"ERR12268342_2","Per base sequence content","FAIL","1440864","151",64,28.63
+"ERR12268342_2","Per sequence GC content","PASS","1440864","151",64,28.63
+"ERR12268342_2","Per base N content","PASS","1440864","151",64,28.63
+"ERR12268342_2","Sequence Length Distribution","PASS","1440864","151",64,28.63
+"ERR12268342_2","Sequence Duplication Levels","PASS","1440864","151",64,28.63
+"ERR12268342_2","Overrepresented sequences","PASS","1440864","151",64,28.63
+"ERR12268342_2","Adapter Content","WARN","1440864","151",64,28.63
