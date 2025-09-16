@@ -1,0 +1,81 @@
+####Day 2: De Novo Assembly vs  Referenced based Mapping
+De Novo: spades,velvet
+Reference based: Bowtie 2, Bwa
+
+
+# Install Mamba (faster conda alternative) conda install -c conda-forge mamba --yes
+# Create dedicated environment mamba create -n de_novo_assembly -c bioconda -c conda-forge \ python=3.8 fastqc fastp spades megahit quast bwa-mem2 \ bowtie2 busco prokka augustus openjdk --yes 
+# Activate environment conda activate de_novo_assembly
+
+#for quality control on all fastq files
+mkdir -p qc_reports fastq_files assembly_results
+fastqc *.fastq -t 16 -o ./qc_reports/
+multiqc ./qc_reports/ -o ./qc_reports/
+
+# for quality control and trimming of just the first fastq paired end read
+fastp \
+    -i ERR12268341_1.fastq.gz \
+    -I ERR12268341_2.fastq.gz \
+    -o qc/ERR12268341_clean_1.fastq \
+    -O qc/ERR12268341_clean_2.fastq \
+    --detect_adapter_for_pe \
+    --correction \
+    --cut_front \
+    --cut_tail \
+    --cut_window_size 4 \
+    --cut_mean_quality 20 \
+    --qualified_quality_phred 20 \
+    --unqualified_percent_limit 40 \
+    --length_required 50 \
+    --thread 8 \
+    --html qc/ERR12268341_fastp_report.html \
+    --json qc/ERR12268341_fastp_report.json
+
+#for correcting the sequence errors before assembly
+spades.py --only-error-correction \
+          -1 ./ERR12268341_clean_1.fastq \
+          -2 ./ERR12268341_clean_2.fastq \
+          -o ../spades_error_corrected \
+          -t 12 \
+          
+#for assemby using spades: there are 3 different types the default, careful, isolated, and meta
+#for default and careful assembly
+spades.py --only-assembler \
+          -1 ERR12268341_clean_100.0_0.cor.fastq.gz \
+          -2 ERR12268341_clean_200.0_0.cor.fastq.gz \
+          -o spades_careful_assembly \
+          -t 4 \
+spades.py --only-assembler \
+           --careful \
+          -1 ERR12268341_clean_100.0_0.cor.fastq.gz \
+          -2 ERR12268341_clean_200.0_0.cor.fastq.gz \
+          -o spades_careful_assembly \
+          -t 4 \
+          -k 21, 33, 55,77 \
+
+#Installing megahit for assembly      
+conda install bioconda::megahit
+
+#Default assembly using megahit
+megahit -1 ERR12268341_clean_100.0_0.cor.fastq.gz -2 ERR12268341_clean_200.0_0.cor.fastq.gz -o megahit_output -t 4
+
+ERR12268341_clean_100.0_0.cor.fastq.gz
+ERR12268341_clean_200.0_0.cor.fastq.gz
+/mnt/c/users/admin/onedrive/desktop/omics-logic/spades_error_corrected/corrected
+
+#megahit assembly using optimized parameters
+megahit \
+          -1 ERR12268341_clean_100.0_0.cor.fastq.gz \
+          -2 ERR12268341_clean_200.0_0.cor.fastq.gz \
+          -o megahit_optimized_assembly \
+          -t 4 \
+          --min-count 3 \
+          --k-min 21 \
+          --k-max 141 \
+          --k-step 20
+
+
+#To check the contig count/length
+grep ">" /mnt/c/users/admin/onedrive/desktop/omics-logic/spades_error_corrected/corrected/spades_careful_assembly/contigs.fasta | wc -l
+
+grep ">" /mnt/c/users/admin/onedrive/desktop/omics-logic/spades_error_corrected/corrected/megahit_project/megahit_output/final.contigs.fa | wc -l
