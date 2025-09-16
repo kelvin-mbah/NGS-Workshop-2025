@@ -14,8 +14,9 @@
 - Assembled with MEGAHIT: megahit ... (in megahit_optimized_assembly/).
 
 ### Results
-- SPAdes Careful & Default
-- MEGAHIT Optimized
+- SPAdes Careful (4663 contigs)
+- Spades Default (6219 contigs)
+- MEGAHIT Optimized (2253)
 
 ### Problems
 - Errors on mounted windows C drive when running megahit, fixed by using home folder (~).
