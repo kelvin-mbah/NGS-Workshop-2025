@@ -1,4 +1,4 @@
 Day 3: Annotation with Prokka
 - Input: spades_careful_assembly/contigs.fasta
 - Command: prokka --outdir prokka_mtb_careful ...
-- Output: mtb_careful.gff
+- Output: PROKKA_09212025.(gbk,fna,gff,tsv,&log)
