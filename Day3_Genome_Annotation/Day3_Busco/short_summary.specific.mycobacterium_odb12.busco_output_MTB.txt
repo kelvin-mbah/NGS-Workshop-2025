@@ -1,0 +1,29 @@
+# BUSCO version is: 6.0.0 
+# The lineage dataset is: mycobacterium_odb12 (Creation date: 2025-05-14, number of genomes: 172, number of BUSCOs: 1512)
+# Summarized benchmarking in BUSCO notation for file /mnt/c/users/admin/onedrive/desktop/omics-logic/spades_error_corrected/corrected/spades_careful_assembly/contigs.fasta
+# BUSCO was run in mode: prok_genome_prod
+# Gene predictor used: prodigal
+
+	***** Results: *****
+
+	C:95.8%[S:91.7%,D:4.2%],F:1.1%,M:3.1%,n:1512	   
+	1449	Complete BUSCOs (C)			   
+	1386	Complete and single-copy BUSCOs (S)	   
+	63	Complete and duplicated BUSCOs (D)	   
+	16	Fragmented BUSCOs (F)			   
+	47	Missing BUSCOs (M)			   
+	1512	Total BUSCO groups searched		   
+
+Assembly Statistics:
+	4633	Number of scaffolds
+	4633	Number of contigs
+	6570003	Total length
+	0.000%	Percent gaps
+	39 kbp	Scaffold N50
+	39 kbp	Contigs N50
+
+
+Dependencies and versions:
+	hmmsearch: 3.4
+	bbtools: None
+	prodigal: 2.6.3
